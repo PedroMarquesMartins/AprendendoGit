@@ -45,8 +45,8 @@ public class Tela0 extends JFrame {
     public void acoes() {
         btn1.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                //CadastroProduto telaCadastro = new CadastroProduto();
-                //telaCadastro.setVisible(true);
+                CadastroProduto telaCadastro = new CadastroProduto();
+                telaCadastro.setVisible(true);
             }
         });
 
