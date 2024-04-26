@@ -52,8 +52,8 @@ public class Tela0 extends JFrame {
 
         btn2.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                //ListagemProdutos telaListagem = new ListagemProdutos();
-                //telaListagem.setVisible(true);
+                ListagemProdutos telaListagem = new ListagemProdutos();
+                telaListagem.setVisible(true);
             }
         });
     }
