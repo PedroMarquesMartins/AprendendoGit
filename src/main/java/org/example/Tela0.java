@@ -3,13 +3,14 @@ package org.example;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class Tela0 extends JFrame {
 
     private JPanel painel1;
+    private JButton btn2;
     private JButton btn1;
-    private JTextField textFieldNome;
-    private JTextField textFieldData;
+
 
     public Tela0() {
         configuracoes();
@@ -25,32 +26,35 @@ public class Tela0 extends JFrame {
     }
 
     private void alocaComponentes() {
+
         painel1 = new JPanel(new FlowLayout());
         painel1.setBackground(Color.WHITE);
 
         JLabel jlabel = new JLabel("Bem-vindo ao programa!\n\n");
 
-        JLabel lblNome = new JLabel("Nome:");
-        textFieldNome = new JTextField(15);
-
-        JLabel lblData = new JLabel("Data:");
-        textFieldData = new JTextField(15);
-
         btn1 = new JButton("Cadastrar");
+        btn2= new JButton("Listar");
 
         painel1.add(jlabel);
-        painel1.add(lblNome);
-        painel1.add(textFieldNome);
-        painel1.add(lblData);
-        painel1.add(textFieldData);
         painel1.add(btn1);
+        painel1.add(btn2);
 
         add(painel1, BorderLayout.CENTER);
     }
 
     public void acoes() {
-        btn1.addActionListener((ActionEvent e) -> {
-            //Logica para salvar
+        btn1.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                CadastroProduto telaCadastro = new CadastroProduto();
+                telaCadastro.setVisible(true);
+            }
+        });
+
+        btn2.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                //ListagemProdutos telaListagem = new ListagemProdutos();
+                //telaListagem.setVisible(true);
+            }
         });
     }
 }
